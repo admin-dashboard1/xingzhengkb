@@ -1,8 +1,11 @@
 import streamlit as st
+import time
 
 st.set_page_config(page_title="行政管理数据看板", page_icon="📊", layout="wide")
 
-GITHUB_PAGES_URL = "https://admin-dashboard1.github.io/-https-xingzhengshuju.com/行政数据看板.html"
+# 用时间戳做缓存破坏，每次刷新都加载最新版
+_cache_buster = str(int(time.time()))
+GITHUB_PAGES_URL = f"https://admin-dashboard1.github.io/-https-xingzhengshuju.com/行政数据看板.html?t={_cache_buster}"
 
 st.title("📊 行政管理数据看板")
 st.caption("完整版 · 实时数据")
